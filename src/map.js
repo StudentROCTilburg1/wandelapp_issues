@@ -4,12 +4,13 @@ class Mapboxgl {
     constructor(){
         mapboxgl.accessToken = 'pk.eyJ1IjoiZHZyaWV0IiwiYSI6ImNpbzlxdnEzMTAwMHB3Y201Ym9yOHgzc24ifQ.B8cRwcPdY0e28MI2gqP1aA';
         return new mapboxgl.Map({
-            container: 'map', // container id
+            container: 'map', // co ntainer id
             style: 'mapbox://styles/mapbox/streets-v8',
             center: [4.895168, 52.370216], // starting position
-            zoom: 9 // starting zoom
+            zoom: 9, // starting zoom,
         });
     }
+    
 }
 
 export default class Map {
@@ -22,6 +23,9 @@ export default class Map {
         this.el = document.createElement('div');
         this.el.className = 'marker';
 
+        var nav = new mapboxgl.NavigationControl();
+        this.map.addControl(nav, 'top-left');
+        this.map.scrollZoom.disable();
 
         this.map.on('click', function (e) {
             const features = this.map.queryRenderedFeatures(e.point, { layers: ['poi'] });
@@ -143,5 +147,4 @@ export default class Map {
             .addTo(this.map);
         this.center(location);
     }
-
-}z  
+}
