@@ -26,7 +26,7 @@ import * as $ from 'jquery';
 // };
 
 
-let fetch = fetch('')
+let fetch = fetch("../tests/test_routes.js")
     .then(
         function (response) {
             if (response.status !==200){
@@ -35,6 +35,8 @@ let fetch = fetch('')
             }
             response.json().then(function (data) {
                 console.log(data);
+
+
 /**
  * Post a textfile to the remoteserver
  * @param remoteserver
