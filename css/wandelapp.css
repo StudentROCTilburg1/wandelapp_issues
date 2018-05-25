@@ -59,13 +59,9 @@ body {
      width:20px;
      height:20px;
  }
-<<<<<<< HEAD
- 
-=======
 
  /* input field */
 
->>>>>>> 18d05e3c8e853a5a501d23bc1fe0e8419bf39109
  .inputfile {
 	width: 0.1px;
 	height: 0.1px;
@@ -74,22 +70,6 @@ body {
 	position: absolute;
 	z-index: -1;
 }
-<<<<<<< HEAD
-.inputfile + label {
-    font-size: 1.25em;
-    font-weight: 700;
-    color: white;
-    background-color: black;
-    display: inline-block;
-}
-
-.inputfile:focus + label,
-.inputfile + label:hover {
-    background-color: red;
-}
-.inputfile + label {
-	cursor: pointer; /* "hand" cursor */
-=======
 
 .inputfile + label {
     font-family: 'Montserrat', sans-serif;
@@ -102,5 +82,4 @@ body {
 
 .inputfile + label {
 	cursor: pointer; 
->>>>>>> 18d05e3c8e853a5a501d23bc1fe0e8419bf39109
 }
