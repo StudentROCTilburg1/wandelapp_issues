@@ -5,26 +5,36 @@ import * as $ from 'jquery';
  * @param remoteserver
  * @returns {Promise}
  */
-const getroutesjson = (remoteserver) => {
-    return new Promise((resolve, reject) => { //New promise for array
-        // let routesjson = [];
-        $.ajax({    
-                type: "GET",
-                url: remoteserver,
-                dataType: "json"
-            })
-            .done((data) => {
-            console.log(data);
-                    const routesjson = data.map((f) => {
-                        return {data: f};
-                    });
-                    resolve(routesjson);
-                }
-            )
-            .fail((err) => reject(err));
-    });
-};
+// const getroutesjson = (remoteserver) => {
+//     return new Promise((resolve, reject) => { //New promise for array
+//         // let routesjson = [];
+//         $.ajax({
+//                 type: "GET",
+//                 url: remoteserver,
+//                 dataType: "json"
+//             })
+//             .done((data) => {
+//             console.log(data);
+//                     const routesjson = data.map((f) => {
+//                         return {data: f};
+//                     });
+//                     resolve(routesjson);
+//                 }
+//             )
+//             .fail((err) => reject(err));
+//     });
+// };
 
+
+let fetch = fetch('')
+    .then(
+        function (response) {
+            if (response.status !==200){
+                console.log('er was een probleem bij de upload code:' + response.status);
+                return;
+            }
+            response.json().then(function (data) {
+                console.log(data);
 /**
  * Post a textfile to the remoteserver
  * @param remoteserver
@@ -45,7 +55,7 @@ const posttextfile = (remoteserver = "", file = "") => {
                     if (xhr.status === 200) {
                         const res = JSON.parse(xhr.response);
                         console.log(res);
-                        if(res.error === true){
+                        if (res.error === true) {
                             reject(res.msg);
                         } else {
                             resolve();
