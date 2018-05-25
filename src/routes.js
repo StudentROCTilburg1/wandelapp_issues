@@ -35,12 +35,6 @@ let fetch = fetch('')
             }
             response.json().then(function (data) {
                 console.log(data);
-            })
-        }
-    )
-    .catch(function (err) {
-console.log('fetch error :-S', err);
-    });
 /**
  * Post a textfile to the remoteserver
  * @param remoteserver

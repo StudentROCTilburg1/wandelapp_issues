@@ -4,9 +4,9 @@
     <meta charset=utf-8 />
     <title>Wandelapp</title>
     <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <script src="https://cdn.jsdelivr.net/npm/ractive"></script>
 </head>
 <body>
-
     <!-- should be run on localhost -->
 
     <!-- Ractive template -->
@@ -27,8 +27,8 @@
 
         <!-- Info & upload -->
         <div id="upload">
-            <input on-change="uploadgpx" type="file" id="file-input" />
-            <div id="info"></div>
+            <input on-change="uploadgpx" type="file" name="file" id="file" class="inputfile" />
+            <label for="file">Choose a file</label>
         </div>
 
     </script>

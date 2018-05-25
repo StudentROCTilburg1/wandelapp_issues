@@ -5,24 +5,29 @@ html {
 body {
     line-height: 1.4em;
 }
- /*#accordion {*/
-     /*background-color: #eee;*/
-     /*width:100vw;*/
-     /*padding:1em;*/
-     /*position: absolute;*/
-     /*top: 100vh;*/
- /*}*/
+ #accordion {
+    display: flex;
+    flex-direction: column;
+    background-color: #144b7a;
+ }
 #accordion div {
-    font-size:1.2em;
-    line-height: 1.2em;
-    display:none;
-    margin-bottom: 2em;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    color: white;
+    margin: 0.6em 2em 0.6em 2em;
 }
 #accordion h1, #info h1{
-    margin-bottom: 0.6em;
-    font-size: 1.4em;
-    color: #cd1143;
+    font-family: 'Montserrat', sans-serif;
+    margin: 15px 15px 15px 15px;
+    font-size: 15px;
+    color: white;
+    text-transform: uppercase;
 }
+
+#accordion h1 {
+    border-top: 1px solid white;
+}
+
 #map {
     height: 100vh;
 }
@@ -35,9 +40,16 @@ body {
     bottom: 0;
     height: 15vw;
     width: 100vw;
-    background-color: #ddd;
+    background-color: #144b7a;
     padding: 1em;
     z-index: 102;
+}
+
+#upload > label {
+    background-color: white;
+    padding: 5px;
+    color: #144b7a;
+    border-radius: 10px;
 }
  .marker {
      display: block;
@@ -47,3 +59,27 @@ body {
      width:20px;
      height:20px;
  }
+
+ /* input field */
+
+ .inputfile {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+.inputfile + label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9em;
+    font-weight: 700;
+    color: white;
+    background-color: #144b7a;
+    display: inline-block;
+}
+
+.inputfile + label {
+	cursor: pointer; 
+}

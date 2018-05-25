@@ -144,4 +144,4 @@ export default class Map {
         this.center(location);
     }
 
-}
+}z  
