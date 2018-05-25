@@ -8,7 +8,7 @@ import * as $ from 'jquery';
 const getroutesjson = (remoteserver) => {
     return new Promise((resolve, reject) => { //New promise for array
         // let routesjson = [];
-        $.ajax({
+        $.ajax({    
                 type: "GET",
                 url: remoteserver,
                 dataType: "json"
