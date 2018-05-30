@@ -5,36 +5,37 @@ import * as $ from 'jquery';
  * @param remoteserver
  * @returns {Promise}
  */
-// const getroutesjson = (remoteserver) => {
-//     return new Promise((resolve, reject) => { //New promise for array
-//         // let routesjson = [];
-//         $.ajax({
-//                 type: "GET",
-//                 url: remoteserver,
-//                 dataType: "json"
-//             })
-//             .done((data) => {
-//             console.log(data);
-//                     const routesjson = data.map((f) => {
-//                         return {data: f};
-//                     });
-//                     resolve(routesjson);
-//                 }
-//             )
-//             .fail((err) => reject(err));
-//     });
-// };
+const getroutesjson = (remoteserver) => {
+    return new Promise((resolve, reject) => { //New promise for array
+        // let routesjson = [];
+        $.ajax({
+                type: "GET",
+                url: remoteserver,
+                dataType: "json"
+            })
+            .done((data) => {
+            console.log(data);
+                    const routesjson = data.map((f) => {
+                        return {data: f};
+                    });
+                    resolve(routesjson);
+                }
+            )
+            .fail((err) => reject(err));
+    });
+};
 
+const url = '';
 
-let fetch = fetch("../tests/test_routes.js")
-    .then(
-        function (response) {
-            if (response.status !==200){
-                console.log('er was een probleem bij de upload code:' + response.status);
-                return;
-            }
-            response.json().then(function (data) {
-                console.log(data);
+// let fetch = fetch("../tests/test_routes.js")
+//     .then(
+//         function (response) {
+//             if (response.status !==200){
+//                 console.log('er was een probleem bij de upload code:' + response.status);
+//                 return;
+//             }
+//             response.json().then(function (data) {
+//                 console.log(data);
 
 
 /**

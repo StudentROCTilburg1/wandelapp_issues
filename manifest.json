@@ -1,0 +1,12 @@
+{
+  "name": "steden_systeem",
+  "short_name": "steden",
+  "start_url": ".",
+  "icons": [
+    {
+      "src": "",
+      "sizes": "",
+      "type": "image/png"
+    }
+  ]
+}
