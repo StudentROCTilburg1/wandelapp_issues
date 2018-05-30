@@ -5,6 +5,7 @@ import * as $ from 'jquery';
  * @param remoteserver
  * @returns {Promise}
  */
+
 const getroutesjson = (remoteserver) => {
     return new Promise((resolve, reject) => { //New promise for array
         // let routesjson = [];
@@ -25,16 +26,6 @@ const getroutesjson = (remoteserver) => {
     });
 };
 
-
-// let fetch = fetch('')
-//     .then(
-//         function (response) {
-//             if (response.status !==200){
-//                 console.log('er was een probleem bij de upload code:' + response.status);
-//                 return;
-//             }
-//             response.json().then(function (data) {
-//                 console.log(data);
 /**
  * Post a textfile to the remoteserver
  * @param remoteserver
