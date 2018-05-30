@@ -5,6 +5,7 @@ import * as $ from 'jquery';
  * @param remoteserver
  * @returns {Promise}
  */
+<<<<<<< HEAD
 const getroutesjson = (remoteserver) => {
     return new Promise((resolve, reject) => { //New promise for array
         // let routesjson = [];
@@ -36,7 +37,28 @@ const url = '';
 //             }
 //             response.json().then(function (data) {
 //                 console.log(data);
+=======
+>>>>>>> b7c6ea95934a02894ecd5c215f4d6de3b1321e6e
 
+const getroutesjson = (remoteserver) => {
+    return new Promise((resolve, reject) => { //New promise for array
+        // let routesjson = [];
+        $.ajax({
+                type: "GET",
+                url: remoteserver,
+                dataType: "json"
+            })
+            .done((data) => {
+            console.log(data);
+                    const routesjson = data.map((f) => {
+                        return {data: f};
+                    });
+                    resolve(routesjson);
+                }
+            )
+            .fail((err) => reject(err));
+    });
+};
 
 /**
  * Post a textfile to the remoteserver
