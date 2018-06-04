@@ -5,25 +5,6 @@ import * as $ from 'jquery';
  * @param remoteserver
  * @returns {Promise}
  */
-const getroutesjson = (remoteserver) => {
-    return new Promise((resolve, reject) => { //New promise for array
-        // let routesjson = [];
-        $.ajax({
-                type: "GET",
-                url: remoteserver,
-                dataType: "json"
-            })
-            .done((data) => {
-            console.log(data);
-                    const routesjson = data.map((f) => {
-                        return {data: f};
-                    });
-                    resolve(routesjson);
-                }
-            )
-            .fail((err) => reject(err));
-    });
-};
 
 const url = '';
 

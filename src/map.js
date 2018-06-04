@@ -38,7 +38,6 @@ export default class Map {
             trackUserLocation: true
         }));
 
-
         this.map.on('click', function (e) {
             const features = this.map.queryRenderedFeatures(e.point, { layers: ['poi'] });
             if (!features.length) {
