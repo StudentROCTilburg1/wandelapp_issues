@@ -1,0 +1,12 @@
+{
+  "name": "wandelen met pietje puk",
+  "short_name": "wandelen",
+  "start_url": ".",
+  "icons": [
+    {
+      "src": "",
+      "sizes": "",
+      "type": "image/png"
+    }
+  ]
+}
