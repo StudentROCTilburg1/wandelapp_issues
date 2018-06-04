@@ -31,7 +31,7 @@ export default class Map {
         this.map.scrollZoom.disable();
 
         //location controll
-        map.addControl(new mapboxgl.GeolocateControl({
+        this.map.addControl(new mapboxgl.GeolocateControl({
             positionOptions: {
                 enableHighAccuracy: true
             },
