@@ -6,6 +6,17 @@ import * as $ from 'jquery';
  * @returns {Promise}
  */
 
+const url = '';
+
+// let fetch = fetch("../tests/test_routes.js")
+//     .then(
+//         function (response) {
+//             if (response.status !==200){
+//                 console.log('er was een probleem bij de upload code:' + response.status);
+//                 return;
+//             }
+//             response.json().then(function (data) {
+//                 console.log(data);
 const getroutesjson = (remoteserver) => {
     return new Promise((resolve, reject) => { //New promise for array
         // let routesjson = [];
