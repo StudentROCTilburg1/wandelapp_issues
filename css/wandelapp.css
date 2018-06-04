@@ -27,6 +27,7 @@ body {
 #map {
     height: 100vh;
 }
+
 #upload {
     overflow-y: auto;
     transition: opacity .5s;
@@ -79,4 +80,8 @@ body {
 
 .inputfile + label {
 	cursor: pointer; 
+}
+#select {
+    position: absolute;
+    z-index: 3;
 }
