@@ -5,7 +5,6 @@ import * as $ from 'jquery';
  * @param remoteserver
  * @returns {Promise}
  */
-<<<<<<< HEAD
 const getroutesjson = (remoteserver) => {
     return new Promise((resolve, reject) => { //New promise for array
         // let routesjson = [];
@@ -37,9 +36,6 @@ const url = '';
 //             }
 //             response.json().then(function (data) {
 //                 console.log(data);
-=======
->>>>>>> b7c6ea95934a02894ecd5c215f4d6de3b1321e6e
-
 const getroutesjson = (remoteserver) => {
     return new Promise((resolve, reject) => { //New promise for array
         // let routesjson = [];
