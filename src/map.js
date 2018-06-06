@@ -5,22 +5,18 @@ class Mapboxgl {
         mapboxgl.accessToken = 'pk.eyJ1IjoiZHZyaWV0IiwiYSI6ImNpbzlxdnEzMTAwMHB3Y201Ym9yOHgzc24ifQ.B8cRwcPdY0e28MI2gqP1aA';
         return new mapboxgl.Map({
             container: 'map', // co ntainer id
-            style: 'mapbox://styles/mapbox/streets-v9',
+            style: 'mapbox://styles/mapbox/streets-v9', 
             center: [4.895168, 52.370216], // starting position
             zoom: 9, // starting zoom,
-        });
-
-        
+        }); 
     }
-    
 }
 
 export default class Map {
-
     //Init
     constructor() {
         this.map = new Mapboxgl();
-        this.defaultzoomlevel = 12;
+        this.defaultzoomlevel = 12; 
         this.youarehere = null;
         this.el = document.createElement('div');
         this.el.className = 'marker';
@@ -30,13 +26,18 @@ export default class Map {
         this.map.addControl(nav, 'top-left');
         this.map.scrollZoom.disable();
 
-        //location controll
+        // Add geolocate control to the map.
         this.map.addControl(new mapboxgl.GeolocateControl({
             positionOptions: {
                 enableHighAccuracy: true
             },
             trackUserLocation: true
-        }));
+        }), 'top-left');
+        
+        this.map.setStyle('mapbox://styles/mapbox/satellite-v9');
+        document.getElementById('select').addEventListener('change', function(map){
+            this.map.setStyle('mapbox://styles/mapbox/street-v9');
+        });
 
         this.map.on('click', function (e) {
             const features = this.map.queryRenderedFeatures(e.point, { layers: ['poi'] });

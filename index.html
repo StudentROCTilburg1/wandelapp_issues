@@ -16,7 +16,12 @@
 <script id='template' type='text/ractive'>
 
         <!-- Mapbox -->
-        <div id='map'></div>
+        <div id='map'>
+            <select id='select'>
+                <option value="street">street</option>
+                <option value="sattelite">sattelite</option>
+            </select>
+        </div>
 
         <!-- Routes list -->
         <div id="accordion">
@@ -38,15 +43,10 @@
 </script>
 <!-- Ractive div/template -->
 <div id='container'></div>
-
 <link rel="stylesheet" type="text/css" href="css/cssreset.css"/>
 <link rel="stylesheet" type="text/css" href="css/wandelapp.css"/>
 <link rel="stylesheet" type="text/css" href="node_modules/mapbox-gl/dist/mapbox-gl.css"/>
 <script src='js/app_es5.js'></script>
-    <link rel="stylesheet" type="text/css" href="css/cssreset.css" />
-    <link rel="stylesheet" type="text/css" href="css/wandelapp.css" />
-    <link rel="stylesheet" type="text/css" href="node_modules/mapbox-gl/dist/mapbox-gl.css"/>
-    <link rel="stylesheet" type="text/css" href="node_modules/mapbox-gl/dist/mapbox-gl.js"/>
-    <script src='js/app_es5.js'></script>
+<script src="node_modules/mapbox-gl/dist/mapbox-gl.js"></script>
 </body>
 </html>
