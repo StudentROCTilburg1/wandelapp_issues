@@ -80,3 +80,18 @@ body {
 .inputfile + label {
 	cursor: pointer; 
 }
+
+select {
+    font-family: 'Arial', sans-serif;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    z-index: 1000000;
+    background-color: white;
+    border: none;
+    border-radius: 2px;
+}
+
+.mapboxgl-popup-content {
+    background-color: black;
+}
