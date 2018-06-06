@@ -17,6 +17,8 @@ const url = '';
 //             }
 //             response.json().then(function (data) {
 //                 console.log(data);
+
+
 const getroutesjson = (remoteserver) => {
     return new Promise((resolve, reject) => { //New promise for array
         // let routesjson = [];

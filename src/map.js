@@ -33,11 +33,6 @@ export default class Map {
             },
             trackUserLocation: true
         }), 'top-left');
-        
-        // this.map.setStyle('mapbox://styles/mapbox/satellite-v9');
-        // document.getElementById('select').addEventListener('change', function(map){
-        //     this.map.setStyle('mapbox://styles/mapbox/street-v9');
-        // });  
 
         //-----------------------------------------------------------------------
         const select = document.getElementById('select');
@@ -79,6 +74,7 @@ export default class Map {
         this.map.setCenter(lnglat);
         this.map.setZoom(this.defaultzoomlevel);
     }
+    
 
     //Show route and set events
     showroute(geo_json) {
