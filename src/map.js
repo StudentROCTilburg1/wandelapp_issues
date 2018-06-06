@@ -34,10 +34,22 @@ export default class Map {
             trackUserLocation: true
         }), 'top-left');
         
-        this.map.setStyle('mapbox://styles/mapbox/satellite-v9');
-        document.getElementById('select').addEventListener('change', function(map){
-            this.map.setStyle('mapbox://styles/mapbox/street-v9');
+        // this.map.setStyle('mapbox://styles/mapbox/satellite-v9');
+        // document.getElementById('select').addEventListener('change', function(map){
+        //     this.map.setStyle('mapbox://styles/mapbox/street-v9');
+        // });  
+
+        //-----------------------------------------------------------------------
+        const select = document.getElementById('select');
+        select.addEventListener('change', ()=>{
+            const selected = select.options[select.selectedIndex].value;
+            if (selected === 'street'){
+                this.map.setStyle('mapbox://styles/mapbox/streets-v9');
+            }else if(selected === 'satellite'){
+                this.map.setStyle('mapbox://styles/mapbox/satellite-v9');
+            }
         });
+        //-----------------------------------------------------------------------
 
         this.map.on('click', function (e) {
             const features = this.map.queryRenderedFeatures(e.point, { layers: ['poi'] });
