@@ -17,6 +17,8 @@
     "grunt-contrib-jshint": "~1.0.0",
     "grunt-contrib-watch": "~1.0.0",
     "grunt-exec": "^1.0.1",
+    "gulp": "^3.9.1",
+    "gulp-gh-pages": "^0.5.4",
     "ractive": "^0.9.14",
     "tape": "^4.6.2",
     "tape-promise": "^1.1.0"
