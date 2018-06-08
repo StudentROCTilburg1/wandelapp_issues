@@ -6,19 +6,27 @@ import * as $ from 'jquery';
  * @returns {Promise}
  */
 
-const url = '';
+console.log(Promise);
 
-// let fetch = fetch("../tests/test_routes.js")
-//     .then(
-//         function (response) {
-//             if (response.status !==200){
-//                 console.log('er was een probleem bij de upload code:' + response.status);
-//                 return;
-//             }
-//             response.json().then(function (data) {
-//                 console.log(data);
+// const getroutesjson = fetch(remoteserver)
+//   .then(
+//     function(response) {
+//       if (response.status !== 200) {
+//         console.log('Looks like there was a problem. Status Code: ' + response.status);
+//         return;
+//       }
 
+//       // Examine the text in the response
+//       response.json().then(function(data) {
+//         console.log(data);
+//       });
+//     }
+//   )
+//   .catch(function(err) {
+//     console.log('Fetch Error :-S', err);
+//   });
 
+  //-------
 const getroutesjson = (remoteserver) => {
     return new Promise((resolve, reject) => { //New promise for array
         // let routesjson = [];
@@ -29,6 +37,7 @@ const getroutesjson = (remoteserver) => {
             })
             .done((data) => {
             console.log(data);
+            console.log(remoteserver);
                     const routesjson = data.map((f) => {
                         return {data: f};
                     });
