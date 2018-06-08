@@ -7,7 +7,21 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="manifest" href="manifest.json">
     <script src="https://cdn.jsdelivr.net/npm/ractive"></script>
-    <script src="src/connect.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+
+            navigator.serviceWorker
+                .register('sw.js' , {scope: ',/'})
+                .then(function (registration) {
+                    console.log("registration succesfull", registration);
+                })
+                .catch(function (err) {
+                    console.log("registration failed" , err);
+                })
+        } else {
+            console.log("service worker zegt nee")
+        }
+    </script>
 </head>
 <body>
 <!-- should be run on localhost -->
