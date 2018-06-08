@@ -28,12 +28,11 @@
 
 <!-- Ractive template -->
 <script id='template' type='text/ractive'>
-
         <!-- Mapbox -->
         <div id='map'>
             <select id='select'>
-                <option value="street">street</option>
-                <option value="sattelite">sattelite</option>
+                <option value="street">Street</option>
+                <option value="satellite">Satellite</option>
             </select>
         </div>
 
@@ -52,8 +51,6 @@
             <input on-change="uploadgpx" type="file" name="file" id="file" class="inputfile" />
             <label for="file"><i style="padding-right: 12px;" class="fa fa-upload" style="font-size:16px"></i> Nieuwe GPX route...</label>
         </div>
-
-
 </script>
 <!-- Ractive div/template -->
 <div id='container'></div>

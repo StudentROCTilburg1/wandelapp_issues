@@ -27,7 +27,6 @@ body {
 #map {
     height: 100vh;
 }
-
 #upload {
     overflow-y: auto;
     transition: opacity .5s;
@@ -81,7 +80,18 @@ body {
 .inputfile + label {
 	cursor: pointer; 
 }
-#select {
+
+select {
+    font-family: 'Arial', sans-serif;
     position: absolute;
-    z-index: 3;
+    right: 5px;
+    top: 5px;
+    z-index: 1000000;
+    background-color: white;
+    border: none;
+    border-radius: 2px;
+}
+
+.mapboxgl-popup-content {
+    background-color: black;
 }

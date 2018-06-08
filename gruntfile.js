@@ -38,7 +38,11 @@ module.exports = function(grunt) {
                 files: [
                     // Copy jquery and ractive
                     {expand: true, cwd: './node_modules/jquery/dist/', src: 'jquery.js', dest: './js/jquery/'},
-                    {expand: true, cwd: './node_modules/ractive/', src: 'ractive.js', dest: './js/ractive/'}
+                    {expand: true, cwd: './node_modules/ractive/', src: 'ractive.js', dest: './js/ractive/'},
+                    {expand: true, cwd: './css/', src: 'reset.css', dest: './css/'},
+                    {expand: true, cwd: './css/', src: 'wandelapp.css', dest: './css/'},
+                    {expand: true, cwd: 'node_modules/mapbox-gl/dist/', src: 'mapbox-gl.css', dest: './mapbox/'},
+                    {expand: true, cwd: 'node_modules/mapbox-gl/dist/', src: 'mapbox-gl.js', dest: './mapbox/'}
                 ],
             },
         },
