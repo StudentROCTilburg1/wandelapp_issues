@@ -21,10 +21,7 @@ export default class Map {
         this.el = document.createElement('div');
         this.el.className = 'marker';
 
-        //zoom controll
-        var nav = new mapboxgl.NavigationControl();
-        this.map.addControl(nav, 'top-left');
-        this.map.scrollZoom.disable();
+
 
         // Add geolocate control to the map.
         // this.map.addControl(new mapboxgl.GeolocateControl({
@@ -50,7 +47,14 @@ export default class Map {
                 
             }
         }
+        //zoom controll
+        var nav = new mapboxgl.NavigationControl();
+        this.map.addControl(nav, 'top-left');
+        this.map.scrollZoom.disable();
+
+        //center controll
         this.mapmap.addControl(new Button(this.map), 'top-left');
+
         document.getElementsByClassName('mapboxgl-ctrl-geolocate').addEventListener('click', function(){
             console.log('werkt');
         });
@@ -64,9 +68,7 @@ export default class Map {
                 this.map.setStyle('mapbox://styles/mapbox/satellite-v9');
             }
         });
-        
-        //-----------------------------------------------------------------------
-
+        //----------------------------------------------------------------------
         this.map.on('click', function (e) {
             const features = this.map.queryRenderedFeatures(e.point, { layers: ['poi'] });
             if (!features.length) {
