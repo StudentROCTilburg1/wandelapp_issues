@@ -27,13 +27,33 @@ export default class Map {
         this.map.scrollZoom.disable();
 
         // Add geolocate control to the map.
-        this.map.addControl(new mapboxgl.GeolocateControl({
-            positionOptions: {
-                enableHighAccuracy: true
-            },
-            trackUserLocation: true
-        }), 'top-left');
+        // this.map.addControl(new mapboxgl.GeolocateControl({
+        //     positionOptions: {
+        //         enableHighAccuracy: true
+        //     },
+        //     trackUserLocation: true
+        // }), 'top-left');
 
+        class Button {
+            constructor(){
+                this.mapmap = new Mapboxgl();
+            }
+            onadd(map){
+                new mapboxgl.GeolocateControl({
+                positionOptions: {
+                    enableHighAccuracy: true
+                },
+                trackUserLocation: true
+            });
+            }
+            onRemove(map){
+                
+            }
+        }
+        this.mapmap.addControl(new Button(this.map), 'top-left');
+        document.getElementsByClassName('mapboxgl-ctrl-geolocate').addEventListener('click', function(){
+            console.log('werkt');
+        });
         //-----------------------------------------------------------------------
         const select = document.getElementById('select');
         select.addEventListener('change', ()=>{
@@ -44,6 +64,7 @@ export default class Map {
                 this.map.setStyle('mapbox://styles/mapbox/satellite-v9');
             }
         });
+        
         //-----------------------------------------------------------------------
 
         this.map.on('click', function (e) {
