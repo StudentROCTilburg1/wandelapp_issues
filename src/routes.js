@@ -7,6 +7,20 @@ import * as $ from 'jquery';
  */
 
 console.log(Promise);
+// const getroutesjson = new Promise((resolve, reject, remoteserver) => {
+//     return fetch(remoteserver).then(response => {
+//       if (response.ok) {
+//         resolve(response);
+//       } else {
+//         reject(new Error('error'));
+//       }
+//     }, error => {
+//       reject(new Error(error.message));
+//     });
+//   });
+
+
+//-----
 
 // const getroutesjson = fetch(remoteserver)
 //   .then(
@@ -15,7 +29,6 @@ console.log(Promise);
 //         console.log('Looks like there was a problem. Status Code: ' + response.status);
 //         return;
 //       }
-
 //       // Examine the text in the response
 //       response.json().then(function(data) {
 //         console.log(data);
@@ -27,6 +40,7 @@ console.log(Promise);
 //   });
 
   //-------
+
 const getroutesjson = (remoteserver) => {
     return new Promise((resolve, reject) => { //New promise for array
         // let routesjson = [];
@@ -55,7 +69,6 @@ const getroutesjson = (remoteserver) => {
  * @returns {Promise}
  */
 const posttextfile = (remoteserver = "", file = "") => {
-
     return new Promise((resolve, reject) => { //New promise for array
         const reader = new FileReader();
         //Send contents file when read
