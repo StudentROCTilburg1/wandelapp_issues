@@ -1,4 +1,3 @@
-
 let CACHE_NAME = 'my-site-cache-v1';
 let urlsToCache = [
     '../js//app_es5.js',
@@ -7,6 +6,7 @@ let urlsToCache = [
 
 self.addEventListener('install', function (event) {
     // Perform install steps
+    importScripts('src/serviceworker-cache-polyfill.js');
     event.waitUntil(
         caches.open(CACHE_NAME)
             .then(function (cache) {
@@ -14,6 +14,29 @@ self.addEventListener('install', function (event) {
                 return cache.addAll(urlsToCache);
             })
     );
+});
+
+self.addEventListener('install', function (event) {
+    event.waitUntil(
+        caches.open('demo-cache').then(function (cache) {
+            return cache.put('/', new Response("From the cache!"));
+        })
+    );
+});
+
+self.addEventListener('fetch', function (event) {
+    event.respondWith(
+        caches.match(event.request).then(function (response) {
+            return response || new Response("Nothing in the cache for this request");
+        })
+    );
+});
+
+
+self.addEventListener('fetch', function (event) {
+
+    console.log(event.request.url);
+
 });
 
 self.addEventListener('fetch', function (event) {
