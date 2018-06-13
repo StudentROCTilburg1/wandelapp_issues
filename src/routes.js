@@ -7,60 +7,48 @@ import * as $ from 'jquery';
  */
 
 console.log(Promise);
-// const getroutesjson = new Promise((resolve, reject, remoteserver) => {
-//     return fetch(remoteserver).then(response => {
-//       if (response.ok) {
-//         resolve(response);
-//       } else {
-//         reject(new Error('error'));
-//       }
-//     }, error => {
-//       reject(new Error(error.message));
-//     });
-//   });
+
+const getroutesjson = (remoteserver) => {
+    return new Promise((resolve, reject) => {
+        fetch(remoteserver)
+        .then(response => {
+            return response.json();
+      })
+      .then((myJson)=>{
+          var routesjson = myJson.map((f)=>{
+              return {data : f};
+          });
+          resolve(routesjson);
+      })
+      .then((fail)=>{
+          reject(fail);
+      });
+    });
+};
 
 
 //-----
 
-// const getroutesjson = fetch(remoteserver)
-//   .then(
-//     function(response) {
-//       if (response.status !== 200) {
-//         console.log('Looks like there was a problem. Status Code: ' + response.status);
-//         return;
-//       }
-//       // Examine the text in the response
-//       response.json().then(function(data) {
-//         console.log(data);
-//       });
-//     }
-//   )
-//   .catch(function(err) {
-//     console.log('Fetch Error :-S', err);
-//   });
-
-  //-------
-
-const getroutesjson = (remoteserver) => {
-    return new Promise((resolve, reject) => { //New promise for array
-        // let routesjson = [];
-        $.ajax({
-                type: "GET",
-                url: remoteserver,
-                dataType: "json"
-            })
-            .done((data) => {
-            console.log(data);
-            console.log(remoteserver);
-                    const routesjson = data.map((f) => {
-                        return {data: f};
-                    });
-                    resolve(routesjson);
-                }
-            )
-            .fail((err) => reject(err));
-    });
-};
+// const getroutesjson = (remoteserver) => {
+//     return new Promise((resolve, reject) => { //New promise for array
+//         // let routesjson = [];
+//         $.ajax({
+//                 type: "GET",
+//                 url: remoteserver,
+//                 dataType: "json"
+//             })
+//             .done((data) => {
+//             console.log(data);
+//             console.log(remoteserver);
+//                     const routesjson = data.map((f) => {
+//                         return {data: f};
+//                     });
+//                     resolve(routesjson);
+//                 }
+//             )
+//             .fail((err) => reject(err));
+//     });
+// };
 
 /**
  * Post a textfile to the remoteserver
@@ -80,9 +68,11 @@ const posttextfile = (remoteserver = "", file = "") => {
                 if (xhr.readyState === 4) {
                     if (xhr.status === 200) {
                         const res = JSON.parse(xhr.response);
+                        console.log('er is een error');
                         console.log(res);
                         if (res.error === true) {
                             reject(res.msg);
+                            // console.log('er is een error');
                         } else {
                             resolve();
                         }
