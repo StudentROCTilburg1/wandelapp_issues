@@ -21,43 +21,19 @@ export default class Map {
         this.el = document.createElement('div');
         this.el.className = 'marker';
 
-
-
-        // Add geolocate control to the map.
-        // this.map.addControl(new mapboxgl.GeolocateControl({
-        //     positionOptions: {
-        //         enableHighAccuracy: true
-        //     },
-        //     trackUserLocation: true
-        // }), 'top-left');
-
-        class Button {
-            constructor(){
-                this.mapmap = new Mapboxgl();
-            }
-            onadd(map){
-                new mapboxgl.GeolocateControl({
-                positionOptions: {
-                    enableHighAccuracy: true
-                },
-                trackUserLocation: true
-            });
-            }
-            onRemove(map){
-                
-            }
-        }
         //zoom controll
         var nav = new mapboxgl.NavigationControl();
         this.map.addControl(nav, 'top-left');
         this.map.scrollZoom.disable();
 
-        //center controll
-        this.mapmap.addControl(new Button(this.map), 'top-left');
+       //center controll.
+       this.map.addControl(new mapboxgl.GeolocateControl({
+        positionOptions: {
+            enableHighAccuracy: true
+        },
+        trackUserLocation: true
+    }), 'top-left');
 
-        document.getElementsByClassName('mapboxgl-ctrl-geolocate').addEventListener('click', function(){
-            console.log('werkt');
-        });
         //-----------------------------------------------------------------------
         const select = document.getElementById('select');
         select.addEventListener('change', ()=>{
