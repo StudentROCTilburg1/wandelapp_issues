@@ -21,23 +21,6 @@ export default class Map {
         this.el = document.createElement('div');
         this.el.className = 'marker';
 
-
-        // class Button {
-        //     constructor(){
-        //         var mapmap = new Mapboxgl();
-        //     }
-        //     onAdd(mapmap){
-        //         new mapboxgl.GeolocateControl({
-        //             positionOptions: {
-        //                 enableHighAccuracy: true
-        //             },
-        //             trackUserLocation: true
-        //         });
-        //     }
-        //     onRemove(map){
-                
-        //     }
-        // }
         //zoom controll
         var nav = new mapboxgl.NavigationControl();
         this.map.addControl(nav, 'top-left');
