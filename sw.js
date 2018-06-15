@@ -66,31 +66,7 @@ self.addEventListener('activate', function (event) {
         })
     );
 });
-//
-// self.addEventListener('install', function(event) {
-//     event.waitUntil(
-//         caches.open(cacheName).then(function(cache) {
-//             return cache.addAll(
-//                 [
-//                     '/css/cssreset.css',
-//                     '/css/wandelapp.css',
-//                     '/js/ractive/ractive.js',
-//                     '/js/jquery/jquery.js',
-//                     '/mapbox/mapbox-gl.css',
-//                     '/mapbox/mapbox-gl.js',
-//                     '/src/app.js',
-//                     '/src/cache-polyfill.js',
-//                     '/src/hickingapp.js',
-//                     '/src/map.js',
-//                     '/src/routes.js',
-//                     '/tests/test_routes.js',
-//                     'gruntfile.js',
-//                     'index.html'
-//                 ]
-//             );
-//         })
-//     );
-// });
+);
 
 // self.addEventListener('fetch', function(event) {
 //     event.respondWith(
@@ -104,3 +80,12 @@ self.addEventListener('activate', function (event) {
 //         })
 //     );
 // });
+
+let deferredPrompt;
+
+window.addEventListener('beforeinstallprompt', (e) => {
+    // Prevent Chrome 67 and earlier from automatically showing the prompt
+    e.preventDefault();
+    // Stash the event so it can be triggered later.
+    deferredPrompt = e;
+});
