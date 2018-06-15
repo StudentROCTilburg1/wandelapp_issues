@@ -4,42 +4,6 @@ let urlsToCache = [
     'https://nodejs-mongo-persistent-wandelappbackend-v4.a3c1.starter-us-west-1.openshiftapps.com/'
 ];
 
-self.addEventListener('install', function (event) {
-    // Perform install steps
-    importScripts('src/serviceworker-cache-polyfill.js');
-    event.waitUntil(
-        caches.open(CACHE_NAME)
-            .then(function (cache) {
-                console.log('Opened cache');
-                return cache.addAll(urlsToCache);
-            })
-    );
-});
-
-self.addEventListener('install', function (event) {
-    event.waitUntil(
-        caches.open('demo-cache').then(function (cache) {
-            return cache.put('/', new Response("From the cache!"));
-        })
-    );
-});
-
-
-self.addEventListener('fetch', function (event) {
-
-    console.log(event.request.url);
-
-    event.respondWith(
-        caches.match(event.request).then(function (response) {
-
-            return response || fetch(event.request);
-
-        })
-    );
-
-});
-
-
 self.addEventListener('fetch', function (event) {
 
     console.log(event.request.url);
@@ -102,3 +66,41 @@ self.addEventListener('activate', function (event) {
         })
     );
 });
+//
+// self.addEventListener('install', function(event) {
+//     event.waitUntil(
+//         caches.open(cacheName).then(function(cache) {
+//             return cache.addAll(
+//                 [
+//                     '/css/cssreset.css',
+//                     '/css/wandelapp.css',
+//                     '/js/ractive/ractive.js',
+//                     '/js/jquery/jquery.js',
+//                     '/mapbox/mapbox-gl.css',
+//                     '/mapbox/mapbox-gl.js',
+//                     '/src/app.js',
+//                     '/src/cache-polyfill.js',
+//                     '/src/hickingapp.js',
+//                     '/src/map.js',
+//                     '/src/routes.js',
+//                     '/tests/test_routes.js',
+//                     'gruntfile.js',
+//                     'index.html'
+//                 ]
+//             );
+//         })
+//     );
+// });
+
+// self.addEventListener('fetch', function(event) {
+//     event.respondWith(
+//         caches.open('mysite-dynamic').then(function(cache) {
+//             return cache.match(event.request).then(function (response) {
+//                 return response || fetch(event.request).then(function(response) {
+//                     cache.put(event.request, response.clone());
+//                     return response;
+//                 });
+//             });
+//         })
+//     );
+// });
