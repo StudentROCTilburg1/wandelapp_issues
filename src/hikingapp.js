@@ -35,7 +35,7 @@ const hikingapp = (remoteserver) => {
         getroutesjson(remoteserver + '/routes?cuid=' + cuid)
             .then(
                 (routesjson) => {
-                    ractive_ui.set("hikes", routesjson);
+                    ractive_ui.set("hikes", routesjson);    ``
                 },
                 (reason) => {
                     // Error retreiving routes!
@@ -64,7 +64,7 @@ const hikingapp = (remoteserver) => {
 
                 // document.querySelector('.items').toggle(false);
                 // document.getElementById('route' + filename).toggle(true); 
-                
+
                 //Show chosen route on map
                 map.showroute(routeobj.data.json);
             },
