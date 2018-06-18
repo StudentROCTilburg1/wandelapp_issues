@@ -8,24 +8,23 @@
     <link rel="manifest" href="manifest.json">
     <script src="https://cdn.jsdelivr.net/npm/ractive"></script>
     <script>
-        window.addEventListener("beforeinstallprompt", function(e) {
-            // log the platforms provided as options in an install prompt
-            console.log(e.platforms); // e.g., ["web", "android", "windows"]
-            e.userChoice.then(function(outcome) {
-                console.log(outcome); // either "accepted" or "dismissed"
-            }, handleError);
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            // Update UI notify the user they can add to home screen
+            btnAdd.style.display = 'block';
         });
     </script>
     <script>
         if ('serviceWorker' in navigator) {
 
             navigator.serviceWorker
-                .register('sw.js' , {scope: ',/'})
+                .register('sw.js', {scope: ',/'})
                 .then(function (registration) {
                     console.log("registration succesfull", registration);
                 })
                 .catch(function (err) {
-                    console.log("registration failed" , err);
+                    console.log("registration failed", err);
                 })
         } else {
             console.log("service worker zegt nee")
@@ -60,6 +59,7 @@
             <input on-change="uploadgpx" type="file" name="file" id="file" class="inputfile" />
             <label for="file"><i style="padding-right: 12px;" class="fa fa-upload" style="font-size:16px"></i> Nieuwe GPX route...</label>
         </div>
+
 </script>
 <!-- Ractive div/template -->
 <div id='container'></div>

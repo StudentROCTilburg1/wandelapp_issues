@@ -1,7 +1,6 @@
 {
-  "name": "wandelen met pietje puk",
   "short_name": "wandelen",
-  "start_url": "/index.html",
+  "name": "wandelen met pietje puk",
   "icons": [
     {
       "src": "/img/icon.png",
@@ -14,5 +13,9 @@
       "sizes": "512x512"
     }
   ],
-  "display": "standalone"
+  "start_url": "/index.html?source=pwa",
+  "display": "standalone",
+  "background_color": "pink",
+  "scope": "wandelapp_issues/",
+  "theme_color": "#3367D6"
 }
