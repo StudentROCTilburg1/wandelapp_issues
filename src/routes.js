@@ -26,30 +26,6 @@ const getroutesjson = (remoteserver) => {
     });
 };
 
-
-//-----
-
-// const getroutesjson = (remoteserver) => {
-//     return new Promise((resolve, reject) => { //New promise for array
-//         // let routesjson = [];
-//         $.ajax({
-//                 type: "GET",
-//                 url: remoteserver,
-//                 dataType: "json"
-//             })
-//             .done((data) => {
-//             console.log(data);
-//             console.log(remoteserver);
-//                     const routesjson = data.map((f) => {
-//                         return {data: f};
-//                     });
-//                     resolve(routesjson);
-//                 }
-//             )
-//             .fail((err) => reject(err));
-//     });
-// };
-
 /**
  * Post a textfile to the remoteserver
  * @param remoteserver

@@ -58,8 +58,13 @@ const hikingapp = (remoteserver) => {
             'collapse': (event, filename, routeobj) => {
                 console.log("yes yes yes");
                 //Toggle description
+
                 $(".item").toggle(false);
                 $("#route" + filename).toggle(true);
+
+                // document.querySelector('.items').toggle(false);
+                // document.getElementById('route' + filename).toggle(true); 
+                
                 //Show chosen route on map
                 map.showroute(routeobj.data.json);
             },
@@ -75,20 +80,20 @@ const hikingapp = (remoteserver) => {
                                     .then(
                                         (routesjson) => {
                                             //Show success
-                                            $("#info").html("Route is toegevoegd");
+                                            document.getElementById('info').innerHTML = "Route is toegevoegd";
                                             ractive_ui.set("hikes", routesjson);
                                             //Show chosen route
                                             map.showroute(routesjson[0].data.json);
                                         },
                                         (reason) => {
                                             //error
-                                            $("#info").html(reason);
+                                            document.getElementById('info').innerHTML = reason;
                                         }
                                     )
                                     .catch(
                                         (reason) => {
                                             //error
-                                            $("#info").html(reason);
+                                            document.getElementById('info').innerHTML = reason;
                                         }
                                     )
                                 ;
@@ -96,7 +101,7 @@ const hikingapp = (remoteserver) => {
                         )
                         .catch(
                             (e) => {
-                                $("#info").html(e);
+                                document.getElementById('info').innerHTML = e;
                             }
                         )
                     ;
