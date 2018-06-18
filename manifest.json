@@ -7,8 +7,12 @@
       "src": "/img/icon.png",
       "type": "image/png",
       "sizes": "192x192"
-
+    },
+    {
+      "src": "/img/icon.png",
+      "type": "image/png",
+      "sizes": "512x512"
     }
-  ]
+  ],
   "display": "standalone"
 }
