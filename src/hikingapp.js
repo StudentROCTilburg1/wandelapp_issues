@@ -35,7 +35,7 @@ const hikingapp = (remoteserver) => {
         getroutesjson(remoteserver + '/routes?cuid=' + cuid)
             .then(
                 (routesjson) => {
-                    ractive_ui.set("hikes", routesjson);    ``
+                    ractive_ui.set("hikes", routesjson);
                 },
                 (reason) => {
                     // Error retreiving routes!
