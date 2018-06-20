@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="GPS Visualizer Sandbox http://www.gpsvisualizer.com/draw/" xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+	<wpt lat="51.5720455" lon="5.0788907">
+		<name><![CDATA[ROC Tilburg, School voor ICT & Mediatechnologie]]></name>
+		<sym>School</sym>
+	</wpt>
+	<wpt lat="51.5713259" lon="5.0794019">
+		<name>Bushalte</name>
+		<sym>School</sym>
+	</wpt>
+	<wpt lat="51.5705841" lon="5.0785481">
+		<name>Naar Smidspad</name>
+	</wpt>
+	<wpt lat="51.568391" lon="5.0779742">
+		<name>Jeans House Tilburg</name>
+		<sym>Shopping Center</sym>
+	</wpt>
+	<wpt lat="51.5671868" lon="5.077468">
+		<name>Hier zat ooit een bakker</name>
+		<sym>Food Source</sym>
+	</wpt>
+	<wpt lat="51.5679304" lon="5.0755797">
+		<name>De Pont</name>
+		<sym>Museum</sym>
+	</wpt>
+	<wpt lat="51.5695859" lon="5.0772212">
+		<name>Lambert de Wijs: Lambertus (Lambert) Gerardus de Lambert de Wijs (Leiden 1882 – Tilburg 1949) was onder meer wolcommissionair, directeur bij Swagemakers-Bogaerts, oprichter van de firma L.A. de Wijs en mededirecteur van A. en A. de Wijs Textielfabriek te Goirle. In 1891 verhuisde het gezin De Wijs van Leiden naar Tilburg, de geboortestad van Lamberts vader.</name>
+	</wpt>
+	<wpt lat="51.570121" lon="5.0759177">
+	</wpt>
+	<wpt lat="51.5708613" lon="5.0757755">
+		<name>Margarehtadreef: Margaretha Johanna gravin Van Hogendorp van Hofwegen werd geboren op het kasteel van Tilburg aan de Hasselt.</name>
+	</wpt>
+	<wpt lat="51.571238" lon="5.0783236">
+		<name>Wie is Diederik?</name>
+	</wpt>
+	<wpt lat="51.5717932" lon="5.0774492">
+		<name>Wie is Jacoba?</name>
+	</wpt>
+	<wpt lat="51.5721216" lon="5.0780554">
+		<name>Wie is Clasina?</name>
+	</wpt>
+	<wpt lat="51.5717732" lon="5.0785945">
+		<name>Waarom kasteel</name>
+	</wpt>
+	<wpt lat="51.5719799" lon="5.0789888">
+		<name>Einde!</name>
+	</wpt>
+</gpx>
